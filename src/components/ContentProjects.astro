@@ -34,6 +34,15 @@ const projects: Project[] = [
         buttonLabel: 'View Details'
     }
 }, {
+    name: 'Real-Time Data Pipeline for Customer Support',
+    description: 'Built real-time data ingestion pipeline for customer support system handling order queries, cancellations, complaints, and follow-ups. Implemented TimescaleDB on CNPG with real-time aggregates to provide instant order details and voucher information to chatbot systems.',
+    technologies: ['TimescaleDB', 'CNPG', 'Real-Time Aggregates', 'PostgreSQL', 'Data Pipeline', 'Kubernetes'],
+    category: 'Data Engineering',
+    impact: '35% query performance improvement, real-time data ingestion for customer support',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'AI Agent Pipeline with CrewAI',
     description: 'Built an end-to-end multi-agent system for automated LinkedIn & Medium content generation using CrewAI framework. Implemented multi-agent collaboration, tool calling, evaluation, and workflow orchestration to automate content creation workflows.',
     technologies: ['CrewAI', 'Python', 'LLMs', 'Multi-Agent Systems', 'Workflow Orchestration'],
@@ -60,52 +69,111 @@ const projects: Project[] = [
     link: {
         buttonLabel: 'View Details'
     }
+}, {
+    name: 'Babel Fish with LLM STT/TTS',
+    description: 'Developed a universal language translator using Large Language Models with Speech-to-Text and Text-to-Speech capabilities. Implemented real-time language translation with voice input/output for seamless multilingual communication.',
+    technologies: ['JavaScript', 'LLMs', 'Speech-to-Text', 'Text-to-Speech', 'Language Translation', 'AI'],
+    category: 'AI/ML',
+    impact: 'Real-time multilingual communication with voice interface',
+    link: {
+        url: 'https://github.com/AmnaMunawar461/Babel-Fish-with-LLM-STT-TTS',
+        buttonLabel: 'View on GitHub'
+    }
+}, {
+    name: 'Business AI Meeting Companion',
+    description: 'Built an AI-powered meeting companion with Speech-to-Text capabilities for business meetings. Automated meeting transcription, summary generation, and action item extraction to enhance productivity.',
+    technologies: ['AI', 'Speech-to-Text', 'Meeting Analytics', 'NLP', 'Business Intelligence'],
+    category: 'AI/ML',
+    impact: 'Automated meeting documentation and enhanced business productivity',
+    link: {
+        url: 'https://github.com/AmnaMunawar461/Business-AI-Meeting-Companion-STT',
+        buttonLabel: 'View on GitHub'
+    }
+}, {
+    name: 'CV-to-Job Description Matching System',
+    description: 'Developed an intelligent system to match CVs with job descriptions using NLP and machine learning. Implemented similarity scoring and ranking algorithms to optimize recruitment processes.',
+    technologies: ['Python', 'NLP', 'Machine Learning', 'CV Analysis', 'Job Matching', 'AI'],
+    category: 'AI/ML',
+    impact: 'Optimized recruitment process with intelligent CV-job matching',
+    link: {
+        url: 'https://github.com/AmnaMunawar461/Matching-CV-to-Job-Description',
+        buttonLabel: 'View on GitHub'
+    }
+}, {
+    name: 'Personalized Job Application Coach',
+    description: 'Created an LLM-based personalized job application coach that provides tailored advice for job seekers. Implemented intelligent coaching algorithms to improve application success rates.',
+    technologies: ['Python', 'LLMs', 'Personalization', 'Career Coaching', 'AI', 'NLP'],
+    category: 'AI/ML',
+    impact: 'Personalized career guidance with AI-powered coaching',
+    link: {
+        url: 'https://github.com/AmnaMunawar461/Your-Personalized-Job-Application-Coach-Based-on-LLM',
+        buttonLabel: 'View on GitHub'
+    }
+}, {
+    name: 'Voice Assistant Application',
+    description: 'Developed a voice-activated assistant application with natural language processing capabilities. Implemented voice commands, speech recognition, and intelligent response generation.',
+    technologies: ['JavaScript', 'Voice Recognition', 'NLP', 'Speech Processing', 'AI Assistant'],
+    category: 'AI/ML',
+    impact: 'Voice-controlled interface with intelligent assistance capabilities',
+    link: {
+        url: 'https://github.com/AmnaMunawar461/VoiceAssistant',
+        buttonLabel: 'View on GitHub'
+    }
 },
 // 2. Data Platform Projects
 {
-    name: 'Database Optimization & Cost Reduction',
-    description: 'Archived 65M+ MongoDB documents to S3, reducing cluster costs by 30% and improving performance. Optimized PostgreSQL databases with hypertables, retention policies, and materialized views for real-time analytics.',
-    technologies: ['MongoDB', 'PostgreSQL', 'AWS S3', 'TimescaleDB', 'Database Optimization'],
+    name: 'MongoDB Archiving & Cost Optimization',
+    description: 'Implemented data archiving pipelines for large MongoDB collections (65M+ documents), reducing storage and read I/O costs by 30%. Automated archival process to S3 with intelligent data lifecycle management and retrieval mechanisms.',
+    technologies: ['MongoDB', 'AWS S3', 'Data Archiving', 'Cost Optimization', 'Python', 'Lifecycle Management'],
     category: 'Data Platform',
-    impact: '30% cost reduction, 35% query performance improvement',
+    impact: '30% storage and I/O cost reduction, improved cluster performance',
     link: {
         buttonLabel: 'View Details'
     }
 }, {
-    name: 'CI/CD Pipeline & Infrastructure Automation',
-    description: 'Configured CI/CD pipelines using GitHub Actions for automated testing and deployment, reducing deployment time by 40%. Managed application deployments on Kubernetes using ArgoCD for GitOps-based continuous delivery.',
-    technologies: ['GitHub Actions', 'ArgoCD', 'Kubernetes', 'Docker', 'Helm', 'GitOps'],
+    name: 'Production Database Infrastructure on Kubernetes',
+    description: 'Deployed CNPG (Cloud Native PostgreSQL) and Helm charts on Kubernetes for production workloads. Configured VPC PrivateLink and AWS DMS for secure production data migration with zero-downtime deployment strategies.',
+    technologies: ['CNPG', 'Kubernetes', 'Helm', 'VPC PrivateLink', 'AWS DMS', 'PostgreSQL'],
     category: 'Data Platform',
-    impact: '40% deployment time reduction, zero-downtime releases',
+    impact: 'Zero-downtime production migrations, enhanced security and scalability',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'Database Monitoring & Alerting System',
+    description: 'Onboarded Percona monitoring for RDS/PostgreSQL and built comprehensive automated alerts to improve database reliability. Implemented proactive monitoring dashboards and notification systems for performance optimization.',
+    technologies: ['Percona Monitoring', 'AWS RDS', 'PostgreSQL', 'Automated Alerts', 'Performance Monitoring'],
+    category: 'Data Platform',
+    impact: 'Improved database reliability, proactive issue detection and resolution',
     link: {
         buttonLabel: 'View Details'
     }
 }, {
     name: 'Data Pipeline Migration & Optimization',
-    description: 'Migrated Spark workloads to DBT, reducing pipeline runtime by 45% and compute costs significantly. Enhanced Trino clusters with KEDA autoscaling, reducing infrastructure costs by 25% while improving query performance.',
+    description: 'Migrated legacy Spark workloads to DBT, reducing pipeline runtime by 45% and compute costs significantly. Enhanced Trino clusters with KEDA autoscaling, reducing infrastructure costs by 25% while improving query performance under high concurrency.',
     technologies: ['DBT', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
     category: 'Data Platform',
     impact: '45% pipeline runtime reduction, 25% infrastructure cost savings',
     link: {
         buttonLabel: 'View Details'
     }
-}, {
-    name: 'Scalable Data Pipeline Architecture',
-    description: 'Architected and deployed scalable data pipelines using Apache Iceberg, Hive, and dbt on AWS S3. Orchestrated workflows via Airflow to support critical analytics and ML workloads. Migrated legacy Spark workloads to dbt, significantly reducing pipeline runtime and compute costs.',
-    technologies: ['Apache Iceberg', 'dbt', 'Apache Airflow', 'AWS S3', 'Hive', 'Trino'],
-    category: 'Data Platform',
-    impact: 'Reduced pipeline runtime and compute costs while supporting 50M+ records',
-    link: {
-        buttonLabel: 'View Details'
-    }
 },
 // 3. Data Engineering Projects
 {
+    name: 'Data Security & Access Control Implementation',
+    description: 'Implemented comprehensive access control and data masking via Apache Ranger for sensitive data protection. Automated user provisioning through Python scripts, eliminating manual processes and ensuring consistent security policies across data platforms.',
+    technologies: ['Apache Ranger', 'Data Masking', 'Python', 'Access Control', 'Security Automation'],
+    category: 'Data Engineering',
+    impact: 'Enhanced data security, automated user provisioning, eliminated manual processes',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'Production Data Recovery & CDC Implementation',
-    description: 'Restored critical order data by extracting snapshots from S3 and reloading tables within 2 hours, preventing business disruption. Led Debezium POC for MySQL and MongoDB change streams with custom Helm charts.',
+    description: 'Restored critical order data by extracting snapshots from S3 and reloading tables within 2 hours, preventing business disruption. Led Debezium POC for MySQL and MongoDB change streams with custom Helm charts for real-time data synchronization.',
     technologies: ['Debezium', 'MySQL', 'MongoDB', 'Kafka', 'Helm', 'AWS S3', 'Data Recovery'],
     category: 'Data Engineering',
-    impact: '2-hour critical data recovery, prevented business disruption',
+    impact: '2-hour critical data recovery, prevented business disruption, real-time sync',
     link: {
         buttonLabel: 'View Details'
     }
@@ -153,12 +221,12 @@ const projects: Project[] = [
                     </div>
 
                     <h3 class="text-xl font-semibold text-white mb-3">
-                        {project.name}
-                    </h3>
+                    {project.name}
+                </h3>
 
                     <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                        {project.description}
-                    </p>
+                    {project.description}
+                </p>
 
                     {project.impact ? (
                         <div class="mb-4 p-2 bg-gray-900/50 rounded border-l-2 border-primary">
