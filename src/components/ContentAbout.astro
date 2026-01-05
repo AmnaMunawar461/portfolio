@@ -1,68 +1,95 @@
 ---
 import { Code } from 'astro:components';
 
-const code = `interface Developer {
+const code = `interface DataEngineer {
     name: string;
+    role: string;
+    experience: string;
     skills: string[];
     interests: string[];
 };
 
 interface TechStack {
-    devOps: string[];
-    backend: string[];
-   frontend: string[];
+    dataPlatform: string[];
+    dataEngineering: string[];
+    aiMl: string[];
+    cloudInfra: string[];
+    databases: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+type ContactType = 'github' | 'twitter' | 'linkedIn' | 'email';
 
 const techStack: TechStack = {
-    devOps: [
-        'GitLab',
-        'GitHub',
-        'Cloudflare',
-        'Docker'
+    dataPlatform: [
+        'Apache Airflow',
+        'Apache Iceberg',
+        'Apache Kafka',
+        'Trino',
+        'dbt',
+        'Debezium',
+        'Airbyte',
+        'AWS DMS'
     ],
-    frontend: [
-        'Angular',
-        'JavaScript',
-        'TypeScript',
-        'TailwindCSS',
-        'PrimeNG',
-        'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
-        'SCSS',
-        'Markdown',
-        'WordPress'
+    dataEngineering: [
+        'ETL/ELT Pipelines',
+        'Change Data Capture (CDC)',
+        'Data Warehousing',
+        'Data Modeling',
+        'Data Governance',
+        'Real-time Analytics',
+        'Data Archiving',
+        'Performance Optimization'
     ],
-    backend: [
-        'Supabase',
-        'Node.js',
-        'Bun',
-        'Deno',
+    aiMl: [
+        'LLMs & GPT',
+        'RAG (Retrieval Augmented Generation)',
+        'CrewAI',
+        'LangChain',
+        'Vector Databases (FAISS)',
+        'Prompt Engineering',
+        'ML Pipelines',
+        'Customer Segmentation (RFM)'
+    ],
+    cloudInfra: [
+        'AWS (EC2, S3, RDS, EKS, IAM)',
+        'Kubernetes',
+        'Docker',
+        'Terraform',
+        'Helm',
+        'ArgoCD',
+        'CNPG',
+        'KEDA Autoscaling'
+    ],
+    databases: [
         'PostgreSQL',
         'MySQL',
-        'S3 Storage',
-        'Resend'
+        'MongoDB',
+        'TimescaleDB',
+        'DuckDB',
+        'BigQuery',
+        'Hive'
     ]
 };
 
-// Developer profile
-const me: Developer = {
-    name: 'Dejan Vi.',
+// Data Engineer profile
+const me: DataEngineer = {
+    name: 'Amna Munawar',
+    role: 'Data Platform & AI Engineer',
+    experience: '3+ years',
     skills: [
-        ...techStack.devOps,
-        ...techStack.backend,
-        ...techStack.frontend
+        ...techStack.dataPlatform,
+        ...techStack.dataEngineering,
+        ...techStack.aiMl,
+        ...techStack.cloudInfra,
+        ...techStack.databases
     ],
     interests: [
-        'Open Source',
-        'Security',
-        'Privacy',
-        'Performance',
-        'Self-Hosting',
-        'Networking'
+        'Scalable Data Architectures',
+        'AI/ML Production Systems',
+        'Cost Optimization',
+        'Data Quality & Governance',
+        'Real-time Analytics',
+        'Open Source Technologies'
     ]
 };
 
@@ -70,17 +97,13 @@ const me: Developer = {
 const contact = (type: ContactType): string => {
     switch (type) {
         case 'github':
-            return 'https://github.com/devidevio';
-        case 'twitter':
-            return 'https://x.com/devidev_io';
+            return 'https://github.com/amnamunawar';
         case 'linkedIn':
-            return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
+            return 'https://www.linkedin.com/in/amna-munawar';
         case 'email':
-            return 'hi@devidev.io';
+            return 'mailto:amnamunawar2201@gmail.com';
         default:
-            return 'Send fax.';
+            return 'Connect with me.';
     }
 };
 
