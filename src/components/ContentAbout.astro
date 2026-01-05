@@ -1,95 +1,116 @@
 ---
 import { Code } from 'astro:components';
 
-const code = `interface DataEngineer {
+const code = `interface FullStackEngineer {
     name: string;
     role: string;
     experience: string;
     skills: string[];
     interests: string[];
+    achievements: string[];
 };
 
 interface TechStack {
-    dataPlatform: string[];
-    dataEngineering: string[];
+    frontend: string[];
+    backend: string[];
     aiMl: string[];
-    cloudInfra: string[];
+    devOps: string[];
     databases: string[];
+    testing: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'email';
+type ContactType = 'github' | 'linkedIn' | 'email';
 
 const techStack: TechStack = {
-    dataPlatform: [
-        'Apache Airflow',
-        'Apache Iceberg',
-        'Apache Kafka',
-        'Trino',
-        'dbt',
-        'Debezium',
-        'Airbyte',
-        'AWS DMS'
+    frontend: [
+        'React.js',
+        'TypeScript',
+        'JavaScript',
+        'React Hooks',
+        'Context API',
+        'HTML/CSS',
+        'Responsive Design',
+        'Webpack'
     ],
-    dataEngineering: [
-        'ETL/ELT Pipelines',
-        'Change Data Capture (CDC)',
-        'Data Warehousing',
-        'Data Modeling',
-        'Data Governance',
-        'Real-time Analytics',
-        'Data Archiving',
-        'Performance Optimization'
+    backend: [
+        'Java',
+        'Kotlin',
+        'Spring Boot',
+        'Python',
+        'RESTful APIs',
+        'Microservices',
+        'Event-Driven Architecture',
+        'API Development'
     ],
     aiMl: [
-        'LLMs & GPT',
-        'RAG (Retrieval Augmented Generation)',
-        'CrewAI',
         'LangChain',
-        'Vector Databases (FAISS)',
+        'CrewAI',
+        'Google Gemini API',
+        'OpenAI GPT',
+        'RAG Architecture',
+        'Scikit-learn',
         'Prompt Engineering',
-        'ML Pipelines',
-        'Customer Segmentation (RFM)'
+        'ALS Algorithm',
+        'Hugging Face',
+        'FAISS'
     ],
-    cloudInfra: [
-        'AWS (EC2, S3, RDS, EKS, IAM)',
-        'Kubernetes',
-        'Docker',
-        'Terraform',
-        'Helm',
+    devOps: [
+        'GitHub Actions',
         'ArgoCD',
-        'CNPG',
-        'KEDA Autoscaling'
+        'Docker',
+        'Kubernetes',
+        'Helm',
+        'Terraform',
+        'AWS (EC2, S3, RDS, EKS)',
+        'CI/CD Pipelines'
     ],
     databases: [
         'PostgreSQL',
         'MySQL',
         'MongoDB',
-        'TimescaleDB',
-        'DuckDB',
-        'BigQuery',
-        'Hive'
+        'Database Optimization',
+        'Query Performance',
+        'Database Indexing',
+        'TimescaleDB'
+    ],
+    testing: [
+        'Test-Driven Development (TDD)',
+        'JUnit',
+        'Mockito',
+        'Jest',
+        'React Testing Library',
+        '100% Test Coverage'
     ]
 };
 
-// Data Engineer profile
-const me: DataEngineer = {
+// Full Stack Engineer profile
+const me: FullStackEngineer = {
     name: 'Amna Munawar',
-    role: 'Data Platform & AI Engineer',
-    experience: '3+ years',
+    role: 'Senior Full Stack Engineer',
+    experience: '3.5 years',
     skills: [
-        ...techStack.dataPlatform,
-        ...techStack.dataEngineering,
+        ...techStack.frontend,
+        ...techStack.backend,
         ...techStack.aiMl,
-        ...techStack.cloudInfra,
-        ...techStack.databases
+        ...techStack.devOps,
+        ...techStack.databases,
+        ...techStack.testing
     ],
     interests: [
-        'Scalable Data Architectures',
-        'AI/ML Production Systems',
-        'Cost Optimization',
-        'Data Quality & Governance',
-        'Real-time Analytics',
-        'Open Source Technologies'
+        'Scalable Web Applications',
+        'AI/ML Integration',
+        'Performance Optimization',
+        'Clean Code Practices',
+        'Microservices Architecture',
+        'Test-Driven Development'
+    ],
+    achievements: [
+        '50% API latency reduction',
+        '100% test coverage maintained',
+        '30% infrastructure cost savings',
+        '45% pipeline runtime reduction',
+        '40% deployment time reduction',
+        'Zero-downtime releases'
     ]
 };
 

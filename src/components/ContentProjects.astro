@@ -3,7 +3,7 @@ interface Project {
     name: string;
     description: string;
     technologies: string[];
-    category: 'AI/ML' | 'Data Platform' | 'Data Engineering';
+    category: 'AI/ML' | 'Data Platform' | 'Data Engineering' | 'Full Stack';
     impact?: string;
     link: {
         url?: string;
@@ -13,7 +13,27 @@ interface Project {
     };
 };
 
-const projects: Project[] = [{
+const projects: Project[] = [
+// 1. AI/ML Projects
+{
+    name: 'AI-Powered Recommendation System',
+    description: 'Built ML inference pipeline for popular items recommendation model using collaborative filtering (ALS algorithm). Integrated recommendation API into existing microservices architecture, enabling personalized product suggestions based on user regions.',
+    technologies: ['Python', 'Scikit-learn', 'Spring Boot', 'PostgreSQL', 'Machine Learning', 'ALS Algorithm'],
+    category: 'AI/ML',
+    impact: 'Enabled personalized product recommendations for enhanced user experience',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'LLM-Powered Search Query Suggestions',
+    description: 'Created intelligent query suggestion system using Google Gemini API and LangChain. Implemented LLM-based relevance classification to identify relevant vs irrelevant suggestions, improving search quality. Applied prompt engineering techniques to optimize model performance.',
+    technologies: ['Google Gemini API', 'LangChain', 'Python', 'Prompt Engineering', 'LLM Integration'],
+    category: 'AI/ML',
+    impact: 'Improved search relevance through AI-powered classification',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'AI Agent Pipeline with CrewAI',
     description: 'Built an end-to-end multi-agent system for automated LinkedIn & Medium content generation using CrewAI framework. Implemented multi-agent collaboration, tool calling, evaluation, and workflow orchestration to automate content creation workflows.',
     technologies: ['CrewAI', 'Python', 'LLMs', 'Multi-Agent Systems', 'Workflow Orchestration'],
@@ -32,6 +52,44 @@ const projects: Project[] = [{
         buttonLabel: 'View Details'
     }
 }, {
+    name: 'RFM-based Customer Segmentation',
+    description: 'Designed and executed RFM-based customer segmentation models to support marketing insights and user segmentation. Partnered with analytics teams to develop user profiling and behavioral pipelines driving actionable business insights.',
+    technologies: ['Python', 'Machine Learning', 'RFM Analysis', 'Customer Segmentation', 'Data Analytics'],
+    category: 'AI/ML',
+    impact: 'Enabled data-driven marketing strategies and improved user targeting',
+    link: {
+        buttonLabel: 'View Details'
+    }
+},
+// 2. Data Platform Projects
+{
+    name: 'Database Optimization & Cost Reduction',
+    description: 'Archived 65M+ MongoDB documents to S3, reducing cluster costs by 30% and improving performance. Optimized PostgreSQL databases with hypertables, retention policies, and materialized views for real-time analytics.',
+    technologies: ['MongoDB', 'PostgreSQL', 'AWS S3', 'TimescaleDB', 'Database Optimization'],
+    category: 'Data Platform',
+    impact: '30% cost reduction, 35% query performance improvement',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'CI/CD Pipeline & Infrastructure Automation',
+    description: 'Configured CI/CD pipelines using GitHub Actions for automated testing and deployment, reducing deployment time by 40%. Managed application deployments on Kubernetes using ArgoCD for GitOps-based continuous delivery.',
+    technologies: ['GitHub Actions', 'ArgoCD', 'Kubernetes', 'Docker', 'Helm', 'GitOps'],
+    category: 'Data Platform',
+    impact: '40% deployment time reduction, zero-downtime releases',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'Data Pipeline Migration & Optimization',
+    description: 'Migrated Spark workloads to DBT, reducing pipeline runtime by 45% and compute costs significantly. Enhanced Trino clusters with KEDA autoscaling, reducing infrastructure costs by 25% while improving query performance.',
+    technologies: ['DBT', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
+    category: 'Data Platform',
+    impact: '45% pipeline runtime reduction, 25% infrastructure cost savings',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'Scalable Data Pipeline Architecture',
     description: 'Architected and deployed scalable data pipelines using Apache Iceberg, Hive, and dbt on AWS S3. Orchestrated workflows via Airflow to support critical analytics and ML workloads. Migrated legacy Spark workloads to dbt, significantly reducing pipeline runtime and compute costs.',
     technologies: ['Apache Iceberg', 'dbt', 'Apache Airflow', 'AWS S3', 'Hive', 'Trino'],
@@ -40,39 +98,34 @@ const projects: Project[] = [{
     link: {
         buttonLabel: 'View Details'
     }
-}, {
-    name: 'Change Data Capture (CDC) Implementation',
-    description: 'Implemented robust CDC layers using Debezium and Airbyte for MySQL and MongoDB change streams. Created production-ready connectors and Helm charts. Enabled real-time data synchronization for up-to-date ML model features and analytics.',
-    technologies: ['Debezium', 'Airbyte', 'MySQL', 'MongoDB', 'Kubernetes', 'Helm'],
+},
+// 3. Data Engineering Projects
+{
+    name: 'Production Data Recovery & CDC Implementation',
+    description: 'Restored critical order data by extracting snapshots from S3 and reloading tables within 2 hours, preventing business disruption. Led Debezium POC for MySQL and MongoDB change streams with custom Helm charts.',
+    technologies: ['Debezium', 'MySQL', 'MongoDB', 'Kafka', 'Helm', 'AWS S3', 'Data Recovery'],
     category: 'Data Engineering',
-    impact: 'Enabled real-time data synchronization for ML models and analytics',
+    impact: '2-hour critical data recovery, prevented business disruption',
+    link: {
+        buttonLabel: 'View Details'
+    }
+},
+// 4. Full Stack Projects
+{
+    name: 'Invoice Management System',
+    description: 'Developed end-to-end invoice management feature with React.js/TypeScript frontend and Kotlin/Spring Boot backend. Reduced API latency by 50% through optimization and maintained 100% test coverage using test-driven development.',
+    technologies: ['React.js', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'TDD'],
+    category: 'Full Stack',
+    impact: '50% API latency reduction, 100% test coverage achieved',
     link: {
         buttonLabel: 'View Details'
     }
 }, {
-    name: 'Cost Optimization & Performance Tuning',
-    description: 'Reduced storage and read I/O costs by 30% through MongoDB archiving pipelines. Optimized Trino clusters with KEDA autoscaling to maintain high query performance under heavy concurrency. Enhanced PostgreSQL with TimescaleDB features for real-time chatbot analytics.',
-    technologies: ['MongoDB', 'Trino', 'KEDA', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
-    category: 'Data Platform',
-    impact: '30% cost reduction in storage/I/O, improved query performance under high concurrency',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Infrastructure as Code & Automation',
-    description: 'Automated infrastructure provisioning using Terraform and ArgoCD for consistent deployments. Created custom Helm charts for CNPG (Cloud Native PostgreSQL) and deployed on Kubernetes. Configured VPC PrivateLink and DMS for production data migrations.',
-    technologies: ['Terraform', 'ArgoCD', 'Helm', 'Kubernetes', 'CNPG', 'AWS DMS'],
-    category: 'Data Platform',
-    impact: 'Streamlined deployments and enabled zero-downtime migrations',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'RFM-based Customer Segmentation',
-    description: 'Designed and executed RFM-based customer segmentation models to support marketing insights and user segmentation. Partnered with analytics teams to develop user profiling and behavioral pipelines driving actionable business insights.',
-    technologies: ['Python', 'Machine Learning', 'RFM Analysis', 'Customer Segmentation', 'Data Analytics'],
-    category: 'AI/ML',
-    impact: 'Enabled data-driven marketing strategies and improved user targeting',
+    name: 'Warehouse Movement System',
+    description: 'Built full-stack warehouse movement tracking system with real-time updates and monitoring. Implemented responsive frontend and scalable backend microservices with comprehensive tracking capabilities.',
+    technologies: ['React.js', 'TypeScript', 'Java', 'Spring Boot', 'Real-Time Applications'],
+    category: 'Full Stack',
+    impact: 'Real-time warehouse tracking with scalable microservices architecture',
     link: {
         buttonLabel: 'View Details'
     }
@@ -83,7 +136,7 @@ const projects: Project[] = [{
 
     <div class="mb-6">
         <h2 class="text-2xl font-bold text-white mb-2">Featured Projects</h2>
-        <p class="text-gray-400 text-sm">Data Platform, Engineering & AI/ML Solutions</p>
+        <p class="text-gray-400 text-sm">AI/ML • Data Platform • Data Engineering • Full Stack</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
