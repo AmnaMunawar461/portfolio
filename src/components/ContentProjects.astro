@@ -14,22 +14,22 @@ interface Project {
 };
 
 const projects: Project[] = [
-// 1. AI/ML Projects
+// Alternating order: Data Platform, AI/ML, Data Engineering, AI/ML, Full Stack, AI/ML, etc.
 {
+    name: 'MongoDB Archiving & Cost Optimization',
+    description: 'Implemented data archiving pipelines for large MongoDB collections (65M+ documents), reducing storage and read I/O costs by 30%. Automated archival process to S3 with intelligent data lifecycle management and retrieval mechanisms.',
+    technologies: ['MongoDB', 'AWS S3', 'Data Archiving', 'Cost Optimization', 'Python', 'Lifecycle Management'],
+    category: 'Data Platform',
+    impact: '30% storage and I/O cost reduction, improved cluster performance',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'AI-Powered Recommendation System',
     description: 'Built ML inference pipeline for popular items recommendation model using collaborative filtering (ALS algorithm). Integrated recommendation API into existing microservices architecture, enabling personalized product suggestions based on user regions.',
     technologies: ['Python', 'Scikit-learn', 'Spring Boot', 'PostgreSQL', 'Machine Learning', 'ALS Algorithm'],
     category: 'AI/ML',
     impact: 'Enabled personalized product recommendations for enhanced user experience',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'LLM-Powered Search Query Suggestions',
-    description: 'Created intelligent query suggestion system using Google Gemini API and LangChain. Implemented LLM-based relevance classification to identify relevant vs irrelevant suggestions, improving search quality. Applied prompt engineering techniques to optimize model performance.',
-    technologies: ['Google Gemini API', 'LangChain', 'Python', 'Prompt Engineering', 'LLM Integration'],
-    category: 'AI/ML',
-    impact: 'Improved search relevance through AI-powered classification',
     link: {
         buttonLabel: 'View Details'
     }
@@ -43,11 +43,38 @@ const projects: Project[] = [
         buttonLabel: 'View Details'
     }
 }, {
+    name: 'LLM-Powered Search Query Suggestions',
+    description: 'Created intelligent query suggestion system using Google Gemini API and LangChain. Implemented LLM-based relevance classification to identify relevant vs irrelevant suggestions, improving search quality. Applied prompt engineering techniques to optimize model performance.',
+    technologies: ['Google Gemini API', 'LangChain', 'Python', 'Prompt Engineering', 'LLM Integration'],
+    category: 'AI/ML',
+    impact: 'Improved search relevance through AI-powered classification',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'Invoice Management System',
+    description: 'Developed end-to-end invoice management feature with React.js/TypeScript frontend and Kotlin/Spring Boot backend. Reduced API latency by 50% through optimization and maintained 100% test coverage using test-driven development.',
+    technologies: ['React.js', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'TDD'],
+    category: 'Full Stack',
+    impact: '50% API latency reduction, 100% test coverage achieved',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'AI Agent Pipeline with CrewAI',
     description: 'Built an end-to-end multi-agent system for automated LinkedIn & Medium content generation using CrewAI framework. Implemented multi-agent collaboration, tool calling, evaluation, and workflow orchestration to automate content creation workflows.',
     technologies: ['CrewAI', 'Python', 'LLMs', 'Multi-Agent Systems', 'Workflow Orchestration'],
     category: 'AI/ML',
     impact: 'Automated content generation pipeline enabling scalable content creation',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'Production Database Infrastructure on Kubernetes',
+    description: 'Deployed CNPG (Cloud Native PostgreSQL) and Helm charts on Kubernetes for production workloads. Configured VPC PrivateLink and AWS DMS for secure production data migration with zero-downtime deployment strategies.',
+    technologies: ['CNPG', 'Kubernetes', 'Helm', 'VPC PrivateLink', 'AWS DMS', 'PostgreSQL'],
+    category: 'Data Platform',
+    impact: 'Zero-downtime production migrations, enhanced security and scalability',
     link: {
         buttonLabel: 'View Details'
     }
@@ -61,11 +88,29 @@ const projects: Project[] = [
         buttonLabel: 'View Details'
     }
 }, {
+    name: 'Data Security & Access Control Implementation',
+    description: 'Implemented comprehensive access control and data masking via Apache Ranger for sensitive data protection. Automated user provisioning through Python scripts, eliminating manual processes and ensuring consistent security policies across data platforms.',
+    technologies: ['Apache Ranger', 'Data Masking', 'Python', 'Access Control', 'Security Automation'],
+    category: 'Data Engineering',
+    impact: 'Enhanced data security, automated user provisioning, eliminated manual processes',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'RFM-based Customer Segmentation',
     description: 'Designed and executed RFM-based customer segmentation models to support marketing insights and user segmentation. Partnered with analytics teams to develop user profiling and behavioral pipelines driving actionable business insights.',
     technologies: ['Python', 'Machine Learning', 'RFM Analysis', 'Customer Segmentation', 'Data Analytics'],
     category: 'AI/ML',
     impact: 'Enabled data-driven marketing strategies and improved user targeting',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
+    name: 'Warehouse Movement System',
+    description: 'Built full-stack warehouse movement tracking system with real-time updates and monitoring. Implemented responsive frontend and scalable backend microservices with comprehensive tracking capabilities.',
+    technologies: ['React.js', 'TypeScript', 'Java', 'Spring Boot', 'Real-Time Applications'],
+    category: 'Full Stack',
+    impact: 'Real-time warehouse tracking with scalable microservices architecture',
     link: {
         buttonLabel: 'View Details'
     }
@@ -80,6 +125,15 @@ const projects: Project[] = [
         buttonLabel: 'View on GitHub'
     }
 }, {
+    name: 'Database Monitoring & Alerting System',
+    description: 'Onboarded Percona monitoring for RDS/PostgreSQL and built comprehensive automated alerts to improve database reliability. Implemented proactive monitoring dashboards and notification systems for performance optimization.',
+    technologies: ['Percona Monitoring', 'AWS RDS', 'PostgreSQL', 'Automated Alerts', 'Performance Monitoring'],
+    category: 'Data Platform',
+    impact: 'Improved database reliability, proactive issue detection and resolution',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'Business AI Meeting Companion',
     description: 'Built an AI-powered meeting companion with Speech-to-Text capabilities for business meetings. Automated meeting transcription, summary generation, and action item extraction to enhance productivity.',
     technologies: ['AI', 'Speech-to-Text', 'Meeting Analytics', 'NLP', 'Business Intelligence'],
@@ -90,6 +144,15 @@ const projects: Project[] = [
         buttonLabel: 'View on GitHub'
     }
 }, {
+    name: 'Production Data Recovery & CDC Implementation',
+    description: 'Restored critical order data by extracting snapshots from S3 and reloading tables within 2 hours, preventing business disruption. Led Debezium POC for MySQL and MongoDB change streams with custom Helm charts for real-time data synchronization.',
+    technologies: ['Debezium', 'MySQL', 'MongoDB', 'Kafka', 'Helm', 'AWS S3', 'Data Recovery'],
+    category: 'Data Engineering',
+    impact: '2-hour critical data recovery, prevented business disruption, real-time sync',
+    link: {
+        buttonLabel: 'View Details'
+    }
+}, {
     name: 'CV-to-Job Description Matching System',
     description: 'Developed an intelligent system to match CVs with job descriptions using NLP and machine learning. Implemented similarity scoring and ranking algorithms to optimize recruitment processes.',
     technologies: ['Python', 'NLP', 'Machine Learning', 'CV Analysis', 'Job Matching', 'AI'],
@@ -98,6 +161,15 @@ const projects: Project[] = [
     link: {
         url: 'https://github.com/AmnaMunawar461/Matching-CV-to-Job-Description',
         buttonLabel: 'View on GitHub'
+    }
+}, {
+    name: 'Data Pipeline Migration & Optimization',
+    description: 'Migrated legacy Spark workloads to DBT, reducing pipeline runtime by 45% and compute costs significantly. Enhanced Trino clusters with KEDA autoscaling, reducing infrastructure costs by 25% while improving query performance under high concurrency.',
+    technologies: ['DBT', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
+    category: 'Data Platform',
+    impact: '45% pipeline runtime reduction, 25% infrastructure cost savings',
+    link: {
+        buttonLabel: 'View Details'
     }
 }, {
     name: 'Personalized Job Application Coach',
@@ -119,81 +191,12 @@ const projects: Project[] = [
         url: 'https://github.com/AmnaMunawar461/VoiceAssistant',
         buttonLabel: 'View on GitHub'
     }
-},
-// 2. Data Platform Projects
-{
-    name: 'MongoDB Archiving & Cost Optimization',
-    description: 'Implemented data archiving pipelines for large MongoDB collections (65M+ documents), reducing storage and read I/O costs by 30%. Automated archival process to S3 with intelligent data lifecycle management and retrieval mechanisms.',
-    technologies: ['MongoDB', 'AWS S3', 'Data Archiving', 'Cost Optimization', 'Python', 'Lifecycle Management'],
+}, {
+    name: 'Apache Ranger Data Governance Platform',
+    description: 'Implemented Apache Ranger on Kubernetes via Terraform to centralize data governance and access control. Established comprehensive security policies, role-based access controls, and audit trails for enterprise data platforms.',
+    technologies: ['Apache Ranger', 'Kubernetes', 'Terraform', 'Data Governance', 'Access Control', 'Security'],
     category: 'Data Platform',
-    impact: '30% storage and I/O cost reduction, improved cluster performance',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Production Database Infrastructure on Kubernetes',
-    description: 'Deployed CNPG (Cloud Native PostgreSQL) and Helm charts on Kubernetes for production workloads. Configured VPC PrivateLink and AWS DMS for secure production data migration with zero-downtime deployment strategies.',
-    technologies: ['CNPG', 'Kubernetes', 'Helm', 'VPC PrivateLink', 'AWS DMS', 'PostgreSQL'],
-    category: 'Data Platform',
-    impact: 'Zero-downtime production migrations, enhanced security and scalability',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Database Monitoring & Alerting System',
-    description: 'Onboarded Percona monitoring for RDS/PostgreSQL and built comprehensive automated alerts to improve database reliability. Implemented proactive monitoring dashboards and notification systems for performance optimization.',
-    technologies: ['Percona Monitoring', 'AWS RDS', 'PostgreSQL', 'Automated Alerts', 'Performance Monitoring'],
-    category: 'Data Platform',
-    impact: 'Improved database reliability, proactive issue detection and resolution',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Data Pipeline Migration & Optimization',
-    description: 'Migrated legacy Spark workloads to DBT, reducing pipeline runtime by 45% and compute costs significantly. Enhanced Trino clusters with KEDA autoscaling, reducing infrastructure costs by 25% while improving query performance under high concurrency.',
-    technologies: ['DBT', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
-    category: 'Data Platform',
-    impact: '45% pipeline runtime reduction, 25% infrastructure cost savings',
-    link: {
-        buttonLabel: 'View Details'
-    }
-},
-// 3. Data Engineering Projects
-{
-    name: 'Data Security & Access Control Implementation',
-    description: 'Implemented comprehensive access control and data masking via Apache Ranger for sensitive data protection. Automated user provisioning through Python scripts, eliminating manual processes and ensuring consistent security policies across data platforms.',
-    technologies: ['Apache Ranger', 'Data Masking', 'Python', 'Access Control', 'Security Automation'],
-    category: 'Data Engineering',
-    impact: 'Enhanced data security, automated user provisioning, eliminated manual processes',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Production Data Recovery & CDC Implementation',
-    description: 'Restored critical order data by extracting snapshots from S3 and reloading tables within 2 hours, preventing business disruption. Led Debezium POC for MySQL and MongoDB change streams with custom Helm charts for real-time data synchronization.',
-    technologies: ['Debezium', 'MySQL', 'MongoDB', 'Kafka', 'Helm', 'AWS S3', 'Data Recovery'],
-    category: 'Data Engineering',
-    impact: '2-hour critical data recovery, prevented business disruption, real-time sync',
-    link: {
-        buttonLabel: 'View Details'
-    }
-},
-// 4. Full Stack Projects
-{
-    name: 'Invoice Management System',
-    description: 'Developed end-to-end invoice management feature with React.js/TypeScript frontend and Kotlin/Spring Boot backend. Reduced API latency by 50% through optimization and maintained 100% test coverage using test-driven development.',
-    technologies: ['React.js', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'TDD'],
-    category: 'Full Stack',
-    impact: '50% API latency reduction, 100% test coverage achieved',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Warehouse Movement System',
-    description: 'Built full-stack warehouse movement tracking system with real-time updates and monitoring. Implemented responsive frontend and scalable backend microservices with comprehensive tracking capabilities.',
-    technologies: ['React.js', 'TypeScript', 'Java', 'Spring Boot', 'Real-Time Applications'],
-    category: 'Full Stack',
-    impact: 'Real-time warehouse tracking with scalable microservices architecture',
+    impact: 'Centralized data governance with enhanced security and compliance',
     link: {
         buttonLabel: 'View Details'
     }
