@@ -1,7 +1,7 @@
 ---
 import { Code } from 'astro:components';
 
-const code = `interface FullStackDataEngineer {
+const code = `interface DataPlatformAIEngineer {
     name: string;
     role: string;
     experience: string;
@@ -11,57 +11,53 @@ const code = `interface FullStackDataEngineer {
 };
 
 interface TechStack {
-    frontend: string[];
-    backend: string[];
+    dataPlatform: string[];
     aiMl: string[];
-    devOps: string[];
+    cloudDevOps: string[];
     databases: string[];
+    backend: string[];
+    frontend: string[];
     testing: string[];
 };
 
 type ContactType = 'github' | 'linkedIn' | 'email';
 
 const techStack: TechStack = {
-    frontend: [
-        'React.js',
-        'TypeScript',
-        'JavaScript',
-        'React Hooks',
-        'Context API',
-        'HTML/CSS',
-        'Responsive Design',
-        'Webpack'
-    ],
-    backend: [
-        'Java',
-        'Kotlin',
-        'Spring Boot',
-        'Python',
-        'RESTful APIs',
-        'Microservices',
-        'Event-Driven Architecture',
-        'API Development'
+    dataPlatform: [
+        'dbt',
+        'Apache Spark',
+        'Trino',
+        'Apache Airflow',
+        'Apache Kafka',
+        'Debezium (CDC)',
+        'KEDA Autoscaling',
+        'CNPG (Cloud Native PostgreSQL)',
+        'TimescaleDB',
+        'Apache Ranger',
+        'Lakehouse Architecture'
     ],
     aiMl: [
         'LangChain',
-        'CrewAI',
+        'LangGraph',
+        'Multi-Agent Orchestration',
+        'RAG Architecture',
+        'pgvector / Vector Search',
         'Google Gemini API',
         'OpenAI GPT',
-        'RAG Architecture',
         'Scikit-learn',
+        'ALS Recommendation',
         'Prompt Engineering',
-        'ALS Algorithm',
-        'Hugging Face',
         'FAISS'
     ],
-    devOps: [
-        'GitHub Actions',
-        'ArgoCD',
-        'Docker',
+    cloudDevOps: [
+        'AWS (S3, RDS, EKS, DMS)',
+        'VPC PrivateLink',
         'Kubernetes',
         'Helm',
         'Terraform',
-        'AWS (EC2, S3, RDS, EKS)',
+        'ArgoCD',
+        'GitHub Actions',
+        'Docker',
         'CI/CD Pipelines'
     ],
     databases: [
@@ -69,50 +65,63 @@ const techStack: TechStack = {
         'MySQL',
         'MongoDB',
         'Database Optimization',
-        'Query Performance',
-        'Database Indexing',
-        'TimescaleDB'
+        'Query Performance Tuning',
+        'Indexing & Partitioning'
+    ],
+    backend: [
+        'Java',
+        'Kotlin',
+        'Spring Boot',
+        'Python',
+        'Microservices',
+        'Event-Driven Architecture',
+        'RESTful APIs'
+    ],
+    frontend: [
+        'React.js',
+        'TypeScript',
+        'JavaScript',
+        'Responsive Design'
     ],
     testing: [
         'Test-Driven Development (TDD)',
         'JUnit',
         'Mockito',
         'Jest',
-        'React Testing Library',
         '100% Test Coverage'
     ]
 };
 
-// Full Stack & Data Platform Engineer profile
-const me: FullStackDataEngineer = {
+// Data Platform & AI Engineer profile
+const me: DataPlatformAIEngineer = {
     name: 'Amna Munawar',
-    role: 'Senior Full Stack & Data Platform Engineer',
-    experience: '3.5 years',
+    role: 'Senior Data Platform & AI Engineer',
+    experience: '3.5+ years',
     skills: [
-        ...techStack.frontend,
-        ...techStack.backend,
+        ...techStack.dataPlatform,
         ...techStack.aiMl,
-        ...techStack.devOps,
+        ...techStack.cloudDevOps,
         ...techStack.databases,
+        ...techStack.backend,
+        ...techStack.frontend,
         ...techStack.testing
     ],
     interests: [
-        'Scalable Web Applications',
         'Data Platform Architecture',
-        'AI/ML Integration',
-        'Performance Optimization',
-        'Real-time Data Processing',
-        'Microservices Architecture'
+        'Streaming & Real-time Data Processing',
+        'AI/LLM Systems in Production',
+        'Cost & Performance Optimization',
+        'Kubernetes-native Data Infrastructure',
+        'Data Governance & Reliability'
     ],
     achievements: [
-        '50% API latency reduction',
-        '30% storage and I/O cost savings',
         '45% data pipeline runtime reduction',
-        '35% query performance improvement',
-        '100% test coverage maintained',
-        'Zero-downtime production migrations',
-        'Real-time data processing systems',
-        'Automated user provisioning'
+        '30% storage & infrastructure cost savings',
+        'Zero-downtime cross-account migrations',
+        '50M+ records processed daily',
+        '2-hour critical production data recovery',
+        'Real-time CDC streaming (Debezium + Kafka)',
+        'Production LLM systems shipped to live products'
     ]
 };
 
@@ -132,6 +141,24 @@ const contact = (type: ContactType): string => {
 
 `;
 ---
+
+<!-- Start: Plain-English intro (for non-technical / first-pass screeners) -->
+<div class="mb-6 pb-6 border-b border-gray-800">
+    <h2 class="text-xl font-bold text-white mb-2">Data Platform &amp; AI Engineer</h2>
+    <p class="text-sm text-gray-300 leading-relaxed mb-3">
+        I build and run the data infrastructure behind a marketplace serving millions — streaming
+        pipelines, lakehouse, and Kubernetes-native databases that process <span class="text-primary font-semibold">50M+ records daily</span>,
+        and I ship AI from prototype into production.
+    </p>
+    <div class="flex flex-wrap gap-2">
+        <span class="text-xs px-2 py-1 rounded bg-primary/15 text-primary border border-primary/30">45% faster pipelines</span>
+        <span class="text-xs px-2 py-1 rounded bg-primary/15 text-primary border border-primary/30">30% lower infra cost</span>
+        <span class="text-xs px-2 py-1 rounded bg-primary/15 text-primary border border-primary/30">Zero-downtime migrations</span>
+        <span class="text-xs px-2 py-1 rounded bg-primary/15 text-primary border border-primary/30">Production LLM systems</span>
+    </div>
+    <p class="text-xs text-gray-500 mt-3 italic">// the same story, for engineers — below 👇</p>
+</div>
+<!-- End: Plain-English intro -->
 
 <Code
     code={code}

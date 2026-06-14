@@ -13,206 +13,144 @@ interface Project {
     };
 };
 
-const projects: Project[] = [
-// Alternating order: Data Platform, AI/ML, Data Engineering, AI/ML, Full Stack, AI/ML, etc.
-{
-    name: 'MongoDB Archiving & Cost Optimization',
-    description: 'Implemented data archiving pipelines for large MongoDB collections (65M+ documents), reducing storage and read I/O costs by 30%. Automated archival process to S3 with intelligent data lifecycle management and retrieval mechanisms.',
-    technologies: ['MongoDB', 'AWS S3', 'Data Archiving', 'Cost Optimization', 'Python', 'Lifecycle Management'],
+// ── Hero: the single artifact that says "data platform engineer with AI skills" ──
+// Personal project — labelled as such, no invented business impact.
+const hero: Project = {
+    name: 'Order Anomaly Detection Pipeline',
+    description: 'A streaming pipeline that flags anomalous orders in real time using a multi-agent LLM workflow over vector-retrieved context. Kafka ingests order events; a LangGraph multi-agent graph reasons over similar historical cases pulled from pgvector, with Gemini in the loop for classification and explanation. Streaming + multi-agent orchestration + vector search in one production-shaped system.',
+    technologies: ['Apache Kafka', 'LangGraph', 'Multi-Agent LLM', 'PostgreSQL / pgvector', 'Google Gemini', 'Real-Time Streaming'],
+    category: 'AI/ML',
+    impact: 'Personal project — end-to-end AI engineering: streaming, multi-agent orchestration, and vector search in a production-shaped system.',
+    link: {
+        // TODO: replace with the anomaly-pipeline repo URL.
+        url: 'https://github.com/AmnaMunawar461/',
+        buttonLabel: 'View on GitHub'
+    }
+};
+
+// ── Flagship grid: 4 platform + 2 AI (+ hero AI above) = the curated shortlist ──
+// Order = priority. Strongest platform card first, AI after.
+const flagship: Project[] = [{
+    name: 'Data Pipeline Migration & Optimization',
+    description: 'Cut pipeline runtime 45% and infrastructure cost 25% by migrating legacy Spark workloads to dbt and autoscaling Trino clusters with KEDA — sustaining query performance under high concurrency.',
+    technologies: ['dbt', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
     category: 'Data Platform',
-    impact: '30% storage and I/O cost reduction, improved cluster performance',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'AI-Powered Recommendation System',
-    description: 'Built ML inference pipeline for popular items recommendation model using collaborative filtering (ALS algorithm). Integrated recommendation API into existing microservices architecture, enabling personalized product suggestions based on user regions.',
-    technologies: ['Python', 'Scikit-learn', 'Spring Boot', 'PostgreSQL', 'Machine Learning', 'ALS Algorithm'],
-    category: 'AI/ML',
-    impact: 'Enabled personalized product recommendations for enhanced user experience',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Real-Time Data Pipeline for Customer Support',
-    description: 'Built real-time data ingestion pipeline for customer support system handling order queries, cancellations, complaints, and follow-ups. Implemented TimescaleDB on CNPG with real-time aggregates to provide instant order details and voucher information to chatbot systems.',
-    technologies: ['TimescaleDB', 'CNPG', 'Real-Time Aggregates', 'PostgreSQL', 'Data Pipeline', 'Kubernetes'],
-    category: 'Data Engineering',
-    impact: '35% query performance improvement, real-time data ingestion for customer support',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'LLM-Powered Search Query Suggestions',
-    description: 'Created intelligent query suggestion system using Google Gemini API and LangChain. Implemented LLM-based relevance classification to identify relevant vs irrelevant suggestions, improving search quality. Applied prompt engineering techniques to optimize model performance.',
-    technologies: ['Google Gemini API', 'LangChain', 'Python', 'Prompt Engineering', 'LLM Integration'],
-    category: 'AI/ML',
-    impact: 'Improved search relevance through AI-powered classification',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Invoice Management System',
-    description: 'Developed end-to-end invoice management feature with React.js/TypeScript frontend and Kotlin/Spring Boot backend. Reduced API latency by 50% through optimization and maintained 100% test coverage using test-driven development.',
-    technologies: ['React.js', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'TDD'],
-    category: 'Full Stack',
-    impact: '50% API latency reduction, 100% test coverage achieved',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'AI Agent Pipeline with CrewAI',
-    description: 'Built an end-to-end multi-agent system for automated LinkedIn & Medium content generation using CrewAI framework. Implemented multi-agent collaboration, tool calling, evaluation, and workflow orchestration to automate content creation workflows.',
-    technologies: ['CrewAI', 'Python', 'LLMs', 'Multi-Agent Systems', 'Workflow Orchestration'],
-    category: 'AI/ML',
-    impact: 'Automated content generation pipeline enabling scalable content creation',
-    link: {
-        buttonLabel: 'View Details'
-    }
+    impact: '45% faster pipelines · 25% lower compute cost',
+    link: { buttonLabel: 'View Details' }
 }, {
     name: 'Production Database Infrastructure on Kubernetes',
-    description: 'Deployed CNPG (Cloud Native PostgreSQL) and Helm charts on Kubernetes for production workloads. Configured VPC PrivateLink and AWS DMS for secure production data migration with zero-downtime deployment strategies.',
-    technologies: ['CNPG', 'Kubernetes', 'Helm', 'VPC PrivateLink', 'AWS DMS', 'PostgreSQL'],
+    description: 'Ran zero-downtime, cross-account database migrations on CNPG (Cloud Native PostgreSQL) using AWS DMS over VPC PrivateLink, with Helm-managed deployments for production workloads.',
+    technologies: ['CNPG', 'Kubernetes', 'AWS DMS', 'VPC PrivateLink', 'Helm', 'PostgreSQL'],
     category: 'Data Platform',
-    impact: 'Zero-downtime production migrations, enhanced security and scalability',
-    link: {
-        buttonLabel: 'View Details'
-    }
+    impact: 'Zero-downtime production migrations',
+    link: { buttonLabel: 'View Details' }
 }, {
-    name: 'RAG-based Medical Q/A Chatbot',
-    description: 'Developed a Medical Q/A Chatbot using RAG architecture with LangChain, FAISS vector store, and OpenAI embeddings. Optimized chunking strategies and prompt engineering to improve retrieval accuracy and contextual responses from long PDF documents.',
-    technologies: ['LangChain', 'RAG', 'FAISS', 'OpenAI', 'Vector Databases', 'Prompt Engineering'],
-    category: 'AI/ML',
-    impact: 'Enabled contextual Q/A from medical documents with improved retrieval accuracy',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Data Security & Access Control Implementation',
-    description: 'Implemented comprehensive access control and data masking via Apache Ranger for sensitive data protection. Automated user provisioning through Python scripts, eliminating manual processes and ensuring consistent security policies across data platforms.',
-    technologies: ['Apache Ranger', 'Data Masking', 'Python', 'Access Control', 'Security Automation'],
-    category: 'Data Engineering',
-    impact: 'Enhanced data security, automated user provisioning, eliminated manual processes',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'RFM-based Customer Segmentation',
-    description: 'Designed and executed RFM-based customer segmentation models to support marketing insights and user segmentation. Partnered with analytics teams to develop user profiling and behavioral pipelines driving actionable business insights.',
-    technologies: ['Python', 'Machine Learning', 'RFM Analysis', 'Customer Segmentation', 'Data Analytics'],
-    category: 'AI/ML',
-    impact: 'Enabled data-driven marketing strategies and improved user targeting',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Warehouse Movement System',
-    description: 'Built full-stack warehouse movement tracking system with real-time updates and monitoring. Implemented responsive frontend and scalable backend microservices with comprehensive tracking capabilities.',
-    technologies: ['React.js', 'TypeScript', 'Java', 'Spring Boot', 'Real-Time Applications'],
-    category: 'Full Stack',
-    impact: 'Real-time warehouse tracking with scalable microservices architecture',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'Babel Fish with LLM STT/TTS',
-    description: 'Developed a universal language translator using Large Language Models with Speech-to-Text and Text-to-Speech capabilities. Implemented real-time language translation with voice input/output for seamless multilingual communication.',
-    technologies: ['JavaScript', 'LLMs', 'Speech-to-Text', 'Text-to-Speech', 'Language Translation', 'AI'],
-    category: 'AI/ML',
-    impact: 'Real-time multilingual communication with voice interface',
-    link: {
-        url: 'https://github.com/AmnaMunawar461/Babel-Fish-with-LLM-STT-TTS',
-        buttonLabel: 'View on GitHub'
-    }
-}, {
-    name: 'Database Monitoring & Alerting System',
-    description: 'Onboarded Percona monitoring for RDS/PostgreSQL and built comprehensive automated alerts to improve database reliability. Implemented proactive monitoring dashboards and notification systems for performance optimization.',
-    technologies: ['Percona Monitoring', 'AWS RDS', 'PostgreSQL', 'Automated Alerts', 'Performance Monitoring'],
+    name: 'Production Data Recovery & CDC',
+    description: 'Recovered critical order data from S3 snapshots within 2 hours to prevent business disruption, and built Debezium change-data-capture over MySQL and MongoDB streaming into Kafka for real-time synchronization.',
+    technologies: ['Debezium', 'Apache Kafka', 'MySQL', 'MongoDB', 'AWS S3', 'Helm'],
     category: 'Data Platform',
-    impact: 'Improved database reliability, proactive issue detection and resolution',
-    link: {
-        buttonLabel: 'View Details'
-    }
+    impact: '2-hour critical recovery · real-time CDC streaming',
+    link: { buttonLabel: 'View Details' }
 }, {
-    name: 'Business AI Meeting Companion',
-    description: 'Built an AI-powered meeting companion with Speech-to-Text capabilities for business meetings. Automated meeting transcription, summary generation, and action item extraction to enhance productivity.',
-    technologies: ['AI', 'Speech-to-Text', 'Meeting Analytics', 'NLP', 'Business Intelligence'],
-    category: 'AI/ML',
-    impact: 'Automated meeting documentation and enhanced business productivity',
-    link: {
-        url: 'https://github.com/AmnaMunawar461/Business-AI-Meeting-Companion-STT',
-        buttonLabel: 'View on GitHub'
-    }
-}, {
-    name: 'Production Data Recovery & CDC Implementation',
-    description: 'Restored critical order data by extracting snapshots from S3 and reloading tables within 2 hours, preventing business disruption. Led Debezium POC for MySQL and MongoDB change streams with custom Helm charts for real-time data synchronization.',
-    technologies: ['Debezium', 'MySQL', 'MongoDB', 'Kafka', 'Helm', 'AWS S3', 'Data Recovery'],
-    category: 'Data Engineering',
-    impact: '2-hour critical data recovery, prevented business disruption, real-time sync',
-    link: {
-        buttonLabel: 'View Details'
-    }
-}, {
-    name: 'CV-to-Job Description Matching System',
-    description: 'Developed an intelligent system to match CVs with job descriptions using NLP and machine learning. Implemented similarity scoring and ranking algorithms to optimize recruitment processes.',
-    technologies: ['Python', 'NLP', 'Machine Learning', 'CV Analysis', 'Job Matching', 'AI'],
-    category: 'AI/ML',
-    impact: 'Optimized recruitment process with intelligent CV-job matching',
-    link: {
-        url: 'https://github.com/AmnaMunawar461/Matching-CV-to-Job-Description',
-        buttonLabel: 'View on GitHub'
-    }
-}, {
-    name: 'Data Pipeline Migration & Optimization',
-    description: 'Migrated legacy Spark workloads to DBT, reducing pipeline runtime by 45% and compute costs significantly. Enhanced Trino clusters with KEDA autoscaling, reducing infrastructure costs by 25% while improving query performance under high concurrency.',
-    technologies: ['DBT', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
+    name: 'MongoDB Archiving & Cost Optimization',
+    description: 'Reduced storage and read I/O cost 30% by archiving 65M+ documents from large MongoDB collections to S3 with automated lifecycle management and retrieval.',
+    technologies: ['MongoDB', 'AWS S3', 'Lifecycle Management', 'Python', 'Cost Optimization'],
     category: 'Data Platform',
-    impact: '45% pipeline runtime reduction, 25% infrastructure cost savings',
-    link: {
-        buttonLabel: 'View Details'
-    }
+    impact: '30% storage & I/O cost reduction · 65M+ docs archived',
+    link: { buttonLabel: 'View Details' }
 }, {
-    name: 'Personalized Job Application Coach',
-    description: 'Created an LLM-based personalized job application coach that provides tailored advice for job seekers. Implemented intelligent coaching algorithms to improve application success rates.',
-    technologies: ['Python', 'LLMs', 'Personalization', 'Career Coaching', 'AI', 'NLP'],
+    name: 'LLM-Powered Search Query Suggestions',
+    description: 'Shipped a production query-suggestion system using Google Gemini and LangChain, with LLM-based relevance classification that improves live search quality — tuned through prompt engineering.',
+    technologies: ['Google Gemini API', 'LangChain', 'Python', 'Prompt Engineering', 'LLM'],
     category: 'AI/ML',
-    impact: 'Personalized career guidance with AI-powered coaching',
-    link: {
-        url: 'https://github.com/AmnaMunawar461/Your-Personalized-Job-Application-Coach-Based-on-LLM',
-        buttonLabel: 'View on GitHub'
-    }
+    impact: 'Live search quality improved in production',
+    link: { buttonLabel: 'View Details' }
 }, {
-    name: 'Voice Assistant Application',
-    description: 'Developed a voice-activated assistant application with natural language processing capabilities. Implemented voice commands, speech recognition, and intelligent response generation.',
-    technologies: ['JavaScript', 'Voice Recognition', 'NLP', 'Speech Processing', 'AI Assistant'],
+    name: 'AI Recommendation System',
+    description: 'Built an ALS collaborative-filtering recommendation model and served it through the existing microservices architecture for region-aware product personalization.',
+    technologies: ['Python', 'Scikit-learn', 'ALS', 'Spring Boot', 'PostgreSQL', 'Microservices'],
     category: 'AI/ML',
-    impact: 'Voice-controlled interface with intelligent assistance capabilities',
-    link: {
-        url: 'https://github.com/AmnaMunawar461/VoiceAssistant',
-        buttonLabel: 'View on GitHub'
-    }
-}, {
-    name: 'Apache Ranger Data Governance Platform',
-    description: 'Implemented Apache Ranger on Kubernetes via Terraform to centralize data governance and access control. Established comprehensive security policies, role-based access controls, and audit trails for enterprise data platforms.',
-    technologies: ['Apache Ranger', 'Kubernetes', 'Terraform', 'Data Governance', 'Access Control', 'Security'],
-    category: 'Data Platform',
-    impact: 'Centralized data governance with enhanced security and compliance',
-    link: {
-        buttonLabel: 'View Details'
-    }
+    impact: 'Region-aware personalization in production',
+    link: { buttonLabel: 'View Details' }
 }];
+
+// ── One full-stack proof for the "also full-stack capable" line ──
+const fullStack: Project = {
+    name: 'Invoice Management System',
+    description: 'End-to-end invoice management with a React/TypeScript frontend and Kotlin/Spring Boot backend — 50% API latency reduction and 100% test coverage via TDD.',
+    technologies: ['React.js', 'TypeScript', 'Kotlin', 'Spring Boot', 'PostgreSQL', 'TDD'],
+    category: 'Full Stack',
+    impact: '50% API latency reduction · 100% test coverage',
+    link: { buttonLabel: 'View Details' }
+};
+
+// ── Additional production work (compact, not headline cards) ──
+// Two Apache Ranger entries merged into one governance line.
+const moreProduction = [
+    { name: 'Data Governance (Apache Ranger)', detail: 'Centralized access control, data masking, and role-based policies on Kubernetes via Terraform, with automated user provisioning.' },
+    { name: 'Real-Time Pipeline for Customer Support', detail: 'TimescaleDB on CNPG with real-time aggregates feeding chatbot order/voucher lookups — 35% query performance improvement.' },
+    { name: 'Database Monitoring & Alerting', detail: 'Percona monitoring for RDS/PostgreSQL with automated alerts and dashboards for proactive reliability.' },
+    { name: 'RFM Customer Segmentation', detail: 'RFM models and behavioral pipelines powering marketing segmentation and user targeting.' }
+];
+
+// ── Side projects (learning builds) — collapsed, GitHub-only ──
+const sideProjects = [
+    { name: 'RAG Medical Q/A Chatbot', tech: 'LangChain · FAISS · OpenAI', url: '' },
+    { name: 'Babel Fish (LLM STT/TTS Translator)', tech: 'LLMs · Speech-to-Text · TTS', url: 'https://github.com/AmnaMunawar461/Babel-Fish-with-LLM-STT-TTS' },
+    { name: 'Business AI Meeting Companion', tech: 'Speech-to-Text · NLP', url: 'https://github.com/AmnaMunawar461/Business-AI-Meeting-Companion-STT' },
+    { name: 'CV-to-Job Description Matching', tech: 'NLP · Similarity Scoring', url: 'https://github.com/AmnaMunawar461/Matching-CV-to-Job-Description' },
+    { name: 'Personalized Job Application Coach', tech: 'LLMs · Personalization', url: 'https://github.com/AmnaMunawar461/Your-Personalized-Job-Application-Coach-Based-on-LLM' },
+    { name: 'Voice Assistant', tech: 'Speech Recognition · NLP', url: 'https://github.com/AmnaMunawar461/VoiceAssistant' }
+];
 ---
 
 <div>
 
     <div class="mb-6">
         <h2 class="text-2xl font-bold text-white mb-2">Featured Projects</h2>
-        <p class="text-gray-400 text-sm">AI/ML • Data Platform • Data Engineering • Full Stack</p>
+        <p class="text-gray-400 text-sm">Data Platform &amp; AI work, production-first — curated, not exhaustive.</p>
     </div>
 
+    <!-- Start: Hero project -->
+    <div class="mb-8 border border-primary/60 rounded-lg p-6 bg-gradient-to-br from-primary/10 to-black hover:border-primary transition-colors">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="text-xs px-2 py-1 rounded bg-primary text-white font-semibold uppercase tracking-wide">★ Hero Project</span>
+            <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-300 border border-gray-700">Personal Project</span>
+            <span class="text-xs px-2 py-1 rounded bg-primary/20 text-primary border border-primary/30">{hero.category}</span>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-white mb-3">{hero.name}</h3>
+
+        <p class="text-gray-300 text-sm mb-4 leading-relaxed">{hero.description}</p>
+
+        {hero.impact ? (
+            <div class="mb-4 p-2 bg-black/40 rounded border-l-2 border-primary">
+                <p class="text-xs text-gray-300">{hero.impact}</p>
+            </div>
+        ) : null}
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            {hero.technologies.map(tech => (
+                <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-300 border border-gray-700">{tech}</span>
+            ))}
+        </div>
+
+        {hero.link?.url ? (
+            <a
+                href={hero.link.url}
+                title={hero.name}
+                target="_blank"
+                class="inline-block px-5 py-2.5 text-center border border-primary rounded-lg text-primary hover:bg-primary hover:text-white transition-colors">
+                {hero.link.buttonLabel || 'View Project'}
+            </a>
+        ) : null}
+    </div>
+    <!-- End: Hero project -->
+
+    <!-- Start: Flagship grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-        {projects.map(project =>
+        {flagship.map(project =>
 
             <div class="flex flex-col justify-between items-start border border-gray-700 rounded-lg p-5 bg-black hover:border-primary transition-colors">
 
@@ -279,5 +217,63 @@ const projects: Project[] = [
         )}
 
     </div>
+    <!-- End: Flagship grid -->
+
+    <!-- Start: Also full-stack -->
+    <div class="mt-10">
+        <h3 class="text-lg font-bold text-white mb-1">Also full-stack capable</h3>
+        <p class="text-gray-400 text-xs mb-4">One representative full-stack build — frontend through backend, with the metrics to back it.</p>
+
+        <div class="border border-gray-700 rounded-lg p-5 bg-black hover:border-primary transition-colors">
+            <span class="text-xs px-2 py-1 rounded bg-primary/20 text-primary border border-primary/30">{fullStack.category}</span>
+            <h4 class="text-lg font-semibold text-white mt-2 mb-2">{fullStack.name}</h4>
+            <p class="text-gray-400 text-sm mb-3 leading-relaxed">{fullStack.description}</p>
+            {fullStack.impact ? (
+                <div class="mb-3 p-2 bg-gray-900/50 rounded border-l-2 border-primary">
+                    <p class="text-xs text-gray-300">{fullStack.impact}</p>
+                </div>
+            ) : null}
+            <div class="flex flex-wrap gap-2">
+                {fullStack.technologies.map(tech => (
+                    <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-300 border border-gray-700">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </div>
+    <!-- End: Also full-stack -->
+
+    <!-- Start: More production work -->
+    <div class="mt-10">
+        <h3 class="text-lg font-bold text-white mb-3">More production work</h3>
+        <ul class="space-y-2">
+            {moreProduction.map(item => (
+                <li class="text-sm text-gray-400 border-l-2 border-gray-700 pl-3">
+                    <span class="text-gray-200 font-semibold">{item.name}</span> — {item.detail}
+                </li>
+            ))}
+        </ul>
+    </div>
+    <!-- End: More production work -->
+
+    <!-- Start: Side projects (collapsed) -->
+    <details class="mt-10 border border-gray-800 rounded-lg p-4 bg-black">
+        <summary class="cursor-pointer text-sm text-gray-300 hover:text-primary select-none">
+            Side projects &amp; learning builds ({sideProjects.length}) — click to expand
+        </summary>
+        <ul class="mt-4 space-y-2">
+            {sideProjects.map(sp => (
+                <li class="flex flex-wrap items-center justify-between gap-2 text-sm">
+                    <span>
+                        <span class="text-gray-200">{sp.name}</span>
+                        <span class="text-gray-500 text-xs"> · {sp.tech}</span>
+                    </span>
+                    {sp.url ? (
+                        <a href={sp.url} target="_blank" title={sp.name} class="text-xs text-primary hover:underline">GitHub →</a>
+                    ) : null}
+                </li>
+            ))}
+        </ul>
+    </details>
+    <!-- End: Side projects -->
 
 </div>

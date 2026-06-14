@@ -1,0 +1,86 @@
+---
+interface Role {
+    company: string;
+    title: string;
+    // ⚠️ VERIFY: confirm exact start date / employer split before sharing widely.
+    period: string;
+    location?: string;
+    summary: string;
+    highlights: string[];
+    stack: string[];
+};
+
+const experience: Role[] = [{
+    company: 'Bazaar Technologies',
+    title: 'Senior Data Platform & AI Engineer',
+    period: 'Dec 2022 — Present', // ⚠️ VERIFY exact dates
+    location: 'Pakistan (Remote)',
+    summary: 'Build and operate production data infrastructure for a marketplace serving millions — streaming pipelines, lakehouse, and Kubernetes-native databases processing 50M+ records daily — and ship AI from prototype into live products.',
+    highlights: [
+        'Cut data pipeline runtime 45% and compute cost 25% migrating Spark → dbt and autoscaling Trino with KEDA.',
+        'Ran zero-downtime, cross-account DB migrations on CNPG/Kubernetes using AWS DMS over VPC PrivateLink.',
+        'Recovered critical order data from S3 snapshots within 2 hours; built Debezium CDC over MySQL/MongoDB into Kafka.',
+        'Reduced storage & I/O cost 30% archiving 65M+ MongoDB documents to S3 with lifecycle management.',
+        'Shipped a production LLM query-suggestion system (Gemini + LangChain) improving live search quality.',
+        'Built an ALS recommendation model served through existing microservices for region-aware personalization.',
+        'Centralized data governance with Apache Ranger (access control, masking, automated provisioning).'
+    ],
+    stack: ['dbt', 'Trino', 'Spark', 'Kafka', 'Debezium', 'CNPG / Kubernetes', 'AWS', 'KEDA', 'LangChain', 'Gemini', 'Apache Ranger']
+}];
+
+// ── To add a prior role, copy this template into the array above ──
+// {
+//     company: 'Company name',
+//     title: 'Software Engineer',
+//     period: 'MMM YYYY — MMM YYYY',
+//     location: 'City / Remote',
+//     summary: 'One-line scope of the role.',
+//     highlights: ['Quantified impact 1', 'Quantified impact 2'],
+//     stack: ['React.js', 'Kotlin', 'Spring Boot']
+// }
+---
+
+<div>
+
+    <div class="mb-6">
+        <h2 class="text-2xl font-bold text-white mb-2">Professional Experience</h2>
+        <p class="text-gray-400 text-sm">Where the production scale and quantified impact actually happened.</p>
+    </div>
+
+    <div class="space-y-6">
+        {experience.map(role => (
+            <div class="border-l-2 border-primary pl-4 relative">
+
+                <span class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-primary"></span>
+
+                <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                    <h3 class="text-lg font-semibold text-white">{role.title}</h3>
+                    <span class="text-xs text-gray-400">{role.period}</span>
+                </div>
+
+                <p class="text-sm text-primary font-medium mb-1">
+                    {role.company}{role.location ? <span class="text-gray-500 font-normal"> · {role.location}</span> : null}
+                </p>
+
+                <p class="text-sm text-gray-400 mb-3 leading-relaxed">{role.summary}</p>
+
+                <ul class="space-y-1.5 mb-3">
+                    {role.highlights.map(h => (
+                        <li class="text-sm text-gray-300 flex gap-2">
+                            <span class="text-primary mt-0.5">▹</span>
+                            <span>{h}</span>
+                        </li>
+                    ))}
+                </ul>
+
+                <div class="flex flex-wrap gap-2">
+                    {role.stack.map(tech => (
+                        <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-300 border border-gray-700">{tech}</span>
+                    ))}
+                </div>
+
+            </div>
+        ))}
+    </div>
+
+</div>
