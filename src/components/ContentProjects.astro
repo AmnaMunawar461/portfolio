@@ -38,6 +38,42 @@ const flagship: Project[] = [{
     impact: '45% faster pipelines · 25% lower compute cost',
     link: { buttonLabel: 'View Details' }
 }, {
+    name: 'Medallion Lakehouse & Data Modeling at Scale',
+    description: 'Designed a layered medallion architecture (bronze → silver → gold) on an Apache Iceberg lakehouse, with tables partitioned by month for prune-efficient queries. Used Iceberg in-place schema evolution to add, rename, and reorder columns with zero table rewrites, and modeled slowly changing dimensions (SCD Type 2) to preserve full history for analytics.',
+    technologies: ['Apache Iceberg', 'Trino', 'dbt', 'Hive Metastore', 'Monthly Partitioning', 'Schema Evolution', 'SCD Type 2'],
+    category: 'Data Engineering',
+    impact: 'Month-partitioned lakehouse · zero-rewrite schema evolution · full-history SCD2 dimensions',
+    link: { buttonLabel: 'View Details' }
+}, {
+    name: 'Medallion Architecture on Databricks',
+    description: 'Built a bronze → silver → gold medallion architecture on Databricks with Delta Lake — raw ingests in bronze, cleaned and conformed data in silver, and business-level aggregates in gold. Orchestrated with Databricks Workflows and tuned with Delta features (ACID transactions, time travel, OPTIMIZE / Z-ORDER).',
+    technologies: ['Databricks', 'Delta Lake', 'PySpark', 'Spark SQL', 'Databricks Workflows', 'Medallion Architecture'],
+    category: 'Data Engineering',
+    impact: 'Bronze/silver/gold lakehouse on Delta · ACID + time travel · optimized reads',
+    link: { buttonLabel: 'View Details' }
+}, {
+    name: 'Serverless ETL Pipeline on AWS',
+    description: 'Built an end-to-end serverless ETL pipeline: raw data lands in an S3 raw layer, AWS Glue jobs and Lambda functions handle transformation, and curated output is written back to S3. Gold-layer KPIs are modeled in Redshift Serverless, exposed as data products via Amazon Athena, and surfaced in Metabase dashboards for business teams.',
+    technologies: ['AWS S3', 'AWS Glue', 'AWS Lambda', 'Redshift Serverless', 'Amazon Athena', 'Metabase'],
+    category: 'Data Engineering',
+    impact: 'End-to-end serverless data products — raw → transformed → gold KPIs → self-serve dashboards',
+    link: { buttonLabel: 'View Details' }
+}, {
+    name: 'Pipeline Orchestration & DAG Design',
+    description: 'Authored Airflow DAGs with explicit dependency management, idempotent tasks, and parameterized backfills for safe historical reprocessing. Set SLAs with alerting on misses and removed worker-scheduling bottlenecks by autoscaling executors with KEDA, keeping pipelines on time under peak load.',
+    technologies: ['Apache Airflow', 'KEDA', 'Backfills', 'Idempotency', 'SLAs', 'Celery Executors'],
+    category: 'Data Engineering',
+    // ⚠️ VERIFY: replace ~30% with your measured on-time-completion improvement.
+    impact: 'Improved on-time DAG completion by ~30% · safe, idempotent backfills',
+    link: { buttonLabel: 'View Details' }
+}, {
+    name: 'Data Quality, Contracts & Observability',
+    description: 'Enforced data quality with dbt tests (uniqueness, not-null, accepted-values, referential integrity), source freshness and volume-anomaly checks, and data contracts at ingestion boundaries. Added pipeline test cases and end-to-end lineage in OpenMetadata to catch breakages before they reached dashboards.',
+    technologies: ['dbt tests', 'Data Contracts', 'OpenMetadata', 'Freshness Checks', 'Volume Anomaly Checks', 'Data Lineage'],
+    category: 'Data Engineering',
+    impact: 'Issues caught pre-production · fewer broken downstream dashboards',
+    link: { buttonLabel: 'View Details' }
+}, {
     name: 'Production Database Infrastructure on Kubernetes',
     description: 'Ran zero-downtime, cross-account database migrations on CNPG (Cloud Native PostgreSQL) using AWS DMS over VPC PrivateLink, with Helm-managed deployments for production workloads.',
     technologies: ['CNPG', 'Kubernetes', 'AWS DMS', 'VPC PrivateLink', 'Helm', 'PostgreSQL'],
@@ -90,6 +126,7 @@ const moreProduction = [
     { name: 'Data Governance (Apache Ranger)', detail: 'Centralized access control, data masking, and role-based policies on Kubernetes via Terraform, with automated user provisioning.' },
     { name: 'Real-Time Pipeline for Customer Support', detail: 'TimescaleDB on CNPG with real-time aggregates feeding chatbot order/voucher lookups — 35% query performance improvement.' },
     { name: 'Database Monitoring & Alerting', detail: 'Percona monitoring for RDS/PostgreSQL with automated alerts and dashboards for proactive reliability.' },
+    { name: 'Self-Serve Analytics with Metabase', detail: 'Curated gold-layer models and built Metabase dashboards over Trino for self-serve reporting across business teams.' },
     { name: 'RFM Customer Segmentation', detail: 'RFM models and behavioral pipelines powering marketing segmentation and user targeting.' }
 ];
 
