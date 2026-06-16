@@ -31,6 +31,14 @@ const hero: Project = {
 // ── Flagship grid: 4 platform + 2 AI (+ hero AI above) = the curated shortlist ──
 // Order = priority. Strongest platform card first, AI after.
 const flagship: Project[] = [{
+    name: 'Self-Serve Analytics Claude Skill (Trino + Metabase)',
+    description: 'Built a Claude skill that turns plain-English questions into analytics: it queries Trino schemas and tables through the Trino MCP, runs the analysis, and creates the chart directly in Metabase. It removes the Metabase learning curve and the heavy lifting of building advanced dashboards, letting non-technical teams self-serve insights from a single sentence.',
+    technologies: ['Claude Skills', 'Trino MCP', 'Trino', 'Metabase', 'LLM Agents', 'NL-to-SQL'],
+    category: 'AI/ML',
+    // ⚠️ VERIFY: example framing — confirm or replace the time-saving claim.
+    impact: 'Plain-English → live Metabase charts in minutes, not hours · self-serve analytics, no dashboard learning curve',
+    link: { buttonLabel: 'View Details' }
+}, {
     name: 'Data Pipeline Migration & Optimization',
     description: 'Cut pipeline runtime 45% and infrastructure cost 25% by migrating legacy Spark workloads to dbt and autoscaling Trino clusters with KEDA — sustaining query performance under high concurrency.',
     technologies: ['dbt', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
