@@ -28,20 +28,31 @@ const experience: Role[] = [{
     stack: ['dbt', 'Trino', 'Spark', 'Kafka', 'Debezium', 'CNPG / Kubernetes', 'AWS', 'KEDA', 'LangChain', 'Gemini', 'Apache Ranger']
 }];
 
-// ── To add a prior role, copy this template into the array above ──
-// {
-//     company: 'Company name',
-//     title: 'Software Engineer',
-//     period: 'MMM YYYY — MMM YYYY',
-//     location: 'City / Remote',
-//     summary: 'One-line scope of the role.',
-//     highlights: ['Quantified impact 1', 'Quantified impact 2'],
-//     stack: ['React.js', 'Kotlin', 'Spring Boot']
-// }
+// ── Key Data Engineering projects (compact, CV-style listing) ──
+const deProjects = [
+    { name: 'Medallion Lakehouse & Data Modeling at Scale', detail: 'Apache Iceberg lakehouse with monthly partitioning, in-place schema evolution, and SCD Type 2 dimensions.', metric: '~4x faster analytics queries' },
+    { name: 'Medallion Architecture on Databricks', detail: 'Bronze → silver → gold on Delta Lake, orchestrated with Databricks Workflows (ACID, time travel, Z-ORDER).', metric: '60% faster gold-layer queries' },
+    { name: 'Serverless ETL Pipeline on AWS', detail: 'S3 raw → Glue/Lambda transforms → S3 → Redshift Serverless gold KPIs → Athena → Metabase dashboards.', metric: '80% less data scanned in Athena' },
+    { name: 'Pipeline Orchestration & DAG Design', detail: 'Airflow DAGs with dependency management, idempotent backfills, SLAs, and KEDA worker autoscaling.', metric: 'On-time DAG completion 72% → 96%' },
+    { name: 'Data Quality, Contracts & Observability', detail: 'dbt tests, source freshness/volume checks, data contracts, and OpenMetadata pipeline tests + lineage.', metric: 'Data incidents down ~70%' },
+    { name: 'Data Pipeline Migration & Optimization', detail: 'Migrated Spark workloads to dbt and autoscaled Trino with KEDA under high concurrency.', metric: '45% faster pipelines · 25% lower cost' },
+    { name: 'Production Data Recovery & CDC', detail: 'S3-snapshot recovery and Debezium change-data-capture over MySQL/MongoDB into Kafka.', metric: '2-hour critical recovery' },
+    { name: 'MongoDB Archiving & Cost Optimization', detail: 'Archived 65M+ documents to S3 with automated lifecycle management.', metric: '30% storage & I/O cost reduction' }
+];
+
+// ── Core skills, grouped for fast (non-technical) scanning ──
+const skillGroups = [
+    { label: 'Data Platform & Lakehouse', items: ['dbt', 'Apache Spark', 'Databricks', 'Trino', 'Apache Airflow', 'Apache Iceberg / Delta', 'Kafka', 'Debezium (CDC)', 'KEDA'] },
+    { label: 'Cloud & DevOps', items: ['AWS (S3, Glue, Lambda, Redshift, Athena, EKS, DMS)', 'Kubernetes', 'CNPG', 'Helm', 'Terraform', 'CI/CD'] },
+    { label: 'AI / ML', items: ['LangChain', 'LangGraph', 'RAG', 'pgvector', 'Google Gemini', 'OpenAI', 'Scikit-learn', 'ALS'] },
+    { label: 'Quality & Governance', items: ['dbt tests', 'Data Contracts', 'OpenMetadata', 'Apache Ranger', 'Metabase'] },
+    { label: 'Languages & Backend', items: ['Python', 'Java', 'Kotlin', 'Spring Boot', 'SQL', 'Microservices'] }
+];
 ---
 
 <div>
 
+    <!-- Start: Professional Experience -->
     <div class="mb-6">
         <h2 class="text-2xl font-bold text-white mb-2">Professional Experience</h2>
         <p class="text-gray-400 text-sm">Where the production scale and quantified impact actually happened.</p>
@@ -82,5 +93,44 @@ const experience: Role[] = [{
             </div>
         ))}
     </div>
+    <!-- End: Professional Experience -->
+
+    <!-- Start: Key Data Engineering Projects -->
+    <div class="mt-10">
+        <h3 class="text-xl font-bold text-white mb-1">Key Data Engineering Projects</h3>
+        <p class="text-gray-400 text-xs mb-4">Production data platform &amp; pipeline work — full details in the projects tab.</p>
+
+        <ul class="space-y-3">
+            {deProjects.map(p => (
+                <li class="border-l-2 border-gray-700 pl-3">
+                    <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                        <span class="text-sm text-gray-100 font-semibold">{p.name}</span>
+                        <span class="text-xs text-primary font-medium">{p.metric}</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">{p.detail}</p>
+                </li>
+            ))}
+        </ul>
+    </div>
+    <!-- End: Key Data Engineering Projects -->
+
+    <!-- Start: Core Skills -->
+    <div class="mt-10">
+        <h3 class="text-xl font-bold text-white mb-4">Core Skills</h3>
+
+        <div class="space-y-4">
+            {skillGroups.map(group => (
+                <div>
+                    <p class="text-xs text-primary font-semibold uppercase tracking-wide mb-2">{group.label}</p>
+                    <div class="flex flex-wrap gap-2">
+                        {group.items.map(item => (
+                            <span class="text-xs px-2 py-1 rounded bg-gray-800 text-gray-300 border border-gray-700">{item}</span>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+    <!-- End: Core Skills -->
 
 </div>
