@@ -31,6 +31,16 @@ const hero: Project = {
 // ── Flagship grid: 4 platform + 2 AI (+ hero AI above) = the curated shortlist ──
 // Order = priority. Strongest platform card first, AI after.
 const flagship: Project[] = [{
+    name: 'Sindhi Hate Speech Detection (Low-Resource NLP)',
+    description: 'Built the labelled corpus that did not previously exist for Sindhi: a 44,800-row augmented dataset over a 3-class schema (neither / offensive / hate) for fine-tuning multilingual transformers. Wrote the multi-source collection pipeline (YouTube comments without API, Telegram via Telethon, X, news comment sections), a Perso-Arabic script filter and hate lexicon for candidate seeding, Urdu-to-Sindhi translation augmentation, and an annotation protocol with Cohen\u2019s kappa inter-annotator agreement targets.',
+    technologies: ['Transformers', 'MuRIL', 'XLM-R', 'Python', 'Dataset Construction', 'Data Augmentation', 'Low-Resource NLP'],
+    category: 'AI/ML',
+    impact: 'Personal research project \u2014 44,800 labelled rows across 3 classes; dataset and collection pipeline built from scratch for a language with no existing labelled hate-speech corpus.',
+    link: {
+        url: 'https://github.com/AmnaMunawar461/',
+        buttonLabel: 'View on GitHub'
+    }
+}, {
     name: 'Self-Serve Analytics Claude Skill (Trino + Metabase)',
     description: 'Built a Claude skill that turns plain-English questions into analytics: it queries Trino schemas and tables through the Trino MCP, runs the analysis, and creates the chart directly in Metabase. It removes the Metabase learning curve and the heavy lifting of building advanced dashboards, letting non-technical teams self-serve insights from a single sentence.',
     technologies: ['Claude Skills', 'Trino MCP', 'Trino', 'Metabase', 'LLM Agents', 'NL-to-SQL'],
@@ -40,10 +50,10 @@ const flagship: Project[] = [{
     link: { buttonLabel: 'View Details' }
 }, {
     name: 'Data Pipeline Migration & Optimization',
-    description: 'Cut pipeline runtime 45% and infrastructure cost 25% by migrating legacy Spark workloads to dbt and autoscaling Trino clusters with KEDA — sustaining query performance under high concurrency.',
+    description: 'Cut pipeline runtime 45% and infrastructure cost 35% by migrating legacy Spark workloads to dbt and autoscaling Trino clusters with KEDA — sustaining query performance under high concurrency.',
     technologies: ['dbt', 'Apache Spark', 'Trino', 'KEDA', 'Apache Airflow', 'AWS'],
     category: 'Data Platform',
-    impact: '45% faster pipelines · 25% lower compute cost',
+    impact: '45% faster pipelines · 35% lower compute cost',
     link: { buttonLabel: 'View Details' }
 }, {
     name: 'Medallion Lakehouse & Data Modeling at Scale',
@@ -82,8 +92,8 @@ const flagship: Project[] = [{
     description: 'Enforced data quality with dbt tests (uniqueness, not-null, accepted-values, referential integrity), source freshness and volume-anomaly checks, and data contracts at ingestion boundaries. Added pipeline test cases and end-to-end lineage in OpenMetadata to catch breakages before they reached dashboards.',
     technologies: ['dbt tests', 'Data Contracts', 'OpenMetadata', 'Freshness Checks', 'Volume Anomaly Checks', 'Data Lineage'],
     category: 'Data Engineering',
-    // ⚠️ VERIFY: example number — replace with your measured incident reduction.
-    impact: 'Data incidents down ~70%',
+    // 95% is the measured figure from the OpenMetadata + dbt-tests data quality platform (matches master CV).
+    impact: 'Data incidents down 95%',
     link: { buttonLabel: 'View Details' }
 }, {
     name: 'Production Database Infrastructure on Kubernetes',

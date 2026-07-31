@@ -15,9 +15,9 @@ const experience: Role[] = [{
     title: 'Senior Data Platform & AI Engineer',
     period: 'Jul 2022 — Present',
     location: 'Pakistan (Hybrid)',
-    summary: 'Build and operate production data infrastructure for a marketplace serving millions — streaming pipelines, lakehouse, and Kubernetes-native databases processing 50M+ records daily — and ship AI from prototype into live products.',
+    summary: 'Build and operate production data infrastructure for a marketplace serving millions — streaming pipelines, lakehouse, and Kubernetes-native databases processing 10M+ records daily — and ship AI from prototype into live products.',
     highlights: [
-        'Cut data pipeline runtime 45% and compute cost 25% migrating Spark → dbt and autoscaling Trino with KEDA.',
+        'Cut data pipeline runtime 45% and compute cost 35% migrating Spark → dbt and autoscaling Trino with KEDA.',
         'Ran zero-downtime, cross-account DB migrations on CNPG/Kubernetes using AWS DMS over VPC PrivateLink.',
         'Recovered critical order data from S3 snapshots within 2 hours; built Debezium CDC over MySQL/MongoDB into Kafka.',
         'Reduced storage & I/O cost 30% archiving 65M+ MongoDB documents to S3 with lifecycle management.',
@@ -34,8 +34,8 @@ const deProjects = [
     { name: 'Medallion Architecture on Databricks', detail: 'Bronze → silver → gold on Delta Lake, orchestrated with Databricks Workflows (ACID, time travel, Z-ORDER).', metric: '60% faster gold-layer queries' },
     { name: 'Serverless ETL Pipeline on AWS', detail: 'S3 raw → Glue/Lambda transforms → S3 → Redshift Serverless gold KPIs → Athena → Metabase dashboards.', metric: '80% less data scanned in Athena' },
     { name: 'Pipeline Orchestration & DAG Design', detail: 'Airflow DAGs with dependency management, idempotent backfills, SLAs, and KEDA worker autoscaling.', metric: 'On-time DAG completion 72% → 96%' },
-    { name: 'Data Quality, Contracts & Observability', detail: 'dbt tests, source freshness/volume checks, data contracts, and OpenMetadata pipeline tests + lineage.', metric: 'Data incidents down ~70%' },
-    { name: 'Data Pipeline Migration & Optimization', detail: 'Migrated Spark workloads to dbt and autoscaled Trino with KEDA under high concurrency.', metric: '45% faster pipelines · 25% lower cost' },
+    { name: 'Data Quality, Contracts & Observability', detail: 'dbt tests, source freshness/volume checks, data contracts, and OpenMetadata pipeline tests + lineage.', metric: 'Data incidents down 95%' },
+    { name: 'Data Pipeline Migration & Optimization', detail: 'Migrated Spark workloads to dbt and autoscaled Trino with KEDA under high concurrency.', metric: '45% faster pipelines · 35% lower cost' },
     { name: 'Production Data Recovery & CDC', detail: 'S3-snapshot recovery and Debezium change-data-capture over MySQL/MongoDB into Kafka.', metric: '2-hour critical recovery' },
     { name: 'MongoDB Archiving & Cost Optimization', detail: 'Archived 65M+ documents to S3 with automated lifecycle management.', metric: '30% storage & I/O cost reduction' }
 ];
